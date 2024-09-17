@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_and_adaptive_basics/core/util/functions/navigate_to.dart';
+import 'package:responsive_and_adaptive_basics/core/functions/navigate_to.dart';
 import 'package:responsive_and_adaptive_basics/views/widgets/layout_builder_example/show_information.dart';
 
 class MobileLayout extends StatelessWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_and_adaptive_basics/core/util/get_responsive_font_size/get_responsive_font_size.dart';
+import 'package:responsive_and_adaptive_basics/core/functions/get_responsive_font_size.dart';
 
 class ResponsiveText extends StatelessWidget {
   const ResponsiveText({super.key});
