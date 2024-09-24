@@ -41,8 +41,7 @@ class _CustomDrawerListViewState extends State<CustomDrawerListView> {
     return ListView.separated(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      padding: const EdgeInsets.only(
-          left: 28.0, right: 20.0, top: 20.0, bottom: 20.0),
+      // padding: const EdgeInsets.only(left: 28.0, right: 20.0, top: 20.0, bottom: 20.0),
       itemBuilder: (context, index) => GestureDetector(
         onTap: () {
           if (CustomDrawerListView.selectedIndex != index) {

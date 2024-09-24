@@ -9,7 +9,7 @@ class CustomPeriodOptions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.all(12.0),
       decoration: ShapeDecoration(
         color: Colors.white,
         shape: RoundedRectangleBorder(

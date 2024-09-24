@@ -1,5 +1,5 @@
 // ignore_for_file: prefer_single_quotes
-abstract class AppImages {
+class AppImages {
   AppImages._();
 
   /// Assets for imagesAvatar1
@@ -15,8 +15,8 @@ abstract class AppImages {
   static const String imagesBalance = "assets/images/balance.svg";
 
   /// Assets for imagesCardItem
-  /// assets/images/card_item.svg
-  static const String imagesCardItem = "assets/images/card_item.svg";
+  /// assets/images/card_item.png
+  static const String imagesCardItem = "assets/images/card_item.png";
 
   /// Assets for imagesDashboard
   /// assets/images/dashboard.svg

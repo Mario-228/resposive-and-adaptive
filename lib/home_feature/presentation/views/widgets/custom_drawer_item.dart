@@ -15,9 +15,13 @@ class CustomDrawerItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: SvgPicture.asset(item.image),
-      title: Text(
-        item.title,
-        style: isClicked ? Styles.textStyleBold16 : Styles.textStyleRegular16,
+      title: FittedBox(
+        fit: BoxFit.scaleDown,
+        alignment: Alignment.centerLeft,
+        child: Text(
+          item.title,
+          style: isClicked ? Styles.textStyleBold16 : Styles.textStyleRegular16,
+        ),
       ),
       trailing: isClicked
           ? Container(

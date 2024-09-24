@@ -6,7 +6,9 @@ import 'package:responsive_and_adaptive_basics/home_feature/presentation/views/w
 class AllExpensesItems extends StatefulWidget {
   const AllExpensesItems({
     super.key,
+    this.isMobile = false,
   });
+  final bool isMobile;
   static int selectedIndex = -1;
   static const List<AllExpensesItemModel> items = [
     AllExpensesItemModel(
@@ -36,50 +38,81 @@ class AllExpensesItems extends StatefulWidget {
 class _AllExpensesItemsState extends State<AllExpensesItems> {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: AllExpensesItems.items.asMap().entries.map((e) {
-        return Expanded(
-          child: Padding(
-            padding:
-                EdgeInsets.symmetric(horizontal: (e.key == 1) ? 12.0 : 0.0),
-            child: GestureDetector(
-              onTap: () {
-                if (e.key != AllExpensesItems.selectedIndex) {
-                  setState(() {
-                    AllExpensesItems.selectedIndex = e.key;
-                  });
-                }
-              },
-              child: AllExpensesItem(
-                isSelected: e.key == AllExpensesItems.selectedIndex,
-                item: e.value,
-              ),
+    return widget.isMobile
+        ? SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: AllExpensesItems.items.asMap().entries.map((e) {
+                return SizedBox(
+                  width: 180.0,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: (e.key == 1) ? 12.0 : 0.0),
+                    child: GestureDetector(
+                      onTap: () {
+                        if (e.key != AllExpensesItems.selectedIndex) {
+                          setState(() {
+                            AllExpensesItems.selectedIndex = e.key;
+                          });
+                        }
+                      },
+                      child: AllExpensesItem(
+                        isSelected: e.key == AllExpensesItems.selectedIndex,
+                        item: e.value,
+                      ),
+                    ),
+                  ),
+                );
+              }).toList(),
             ),
-          ),
-        );
-      }).toList()
-      // Expanded(
-      //   child: AllExpensesItem(
-      //     item: items[0],
-      //   ),
-      // ),
-      // const SizedBox(
-      //   width: 12.0,
-      // ),
-      // Expanded(
-      //   child: AllExpensesItem(
-      //     item: items[1],
-      //   ),
-      // ),
-      // const SizedBox(
-      //   width: 12.0,
-      // ),
-      // Expanded(
-      //   child: AllExpensesItem(
-      //     item: items[2],
-      //   ),
-      // ),
-      ,
-    );
+          )
+        : Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: AllExpensesItems.items.asMap().entries.map((e) {
+              return Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: (e.key == 1) ? 12.0 : 0.0),
+                  child: GestureDetector(
+                    onTap: () {
+                      if (e.key != AllExpensesItems.selectedIndex) {
+                        setState(() {
+                          AllExpensesItems.selectedIndex = e.key;
+                        });
+                      }
+                    },
+                    child: AllExpensesItem(
+                      isSelected: e.key == AllExpensesItems.selectedIndex,
+                      item: e.value,
+                    ),
+                  ),
+                ),
+              );
+            }).toList());
   }
 }
+
+
+             // Expanded(
+              //   child: AllExpensesItem(
+              //     item: items[0],
+              //   ),
+              // ),
+              // const SizedBox(
+              //   width: 12.0,
+              // ),
+              // Expanded(
+              //   child: AllExpensesItem(
+              //     item: items[1],
+              //   ),
+              // ),
+              // const SizedBox(
+              //   width: 12.0,
+              // ),
+              // Expanded(
+              //   child: AllExpensesItem(
+              //     item: items[2],
+              //   ),
+              // ),

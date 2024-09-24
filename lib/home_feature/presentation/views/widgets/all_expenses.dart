@@ -6,17 +6,18 @@ import 'package:responsive_and_adaptive_basics/home_feature/presentation/views/w
 class AllExpenses extends StatelessWidget {
   const AllExpenses({
     super.key,
+    this.isMobile = false,
   });
-
+  final bool isMobile;
   @override
   Widget build(BuildContext context) {
-    return const CustomBackgroundContainer(
+    return CustomBackgroundContainer(
       child: Column(
         children: [
-          AllExpensesHeader(),
-          SizedBox(height: 16.0),
-          AllExpensesItems(),
-          SizedBox(height: 8.0),
+          const AllExpensesHeader(),
+          const SizedBox(height: 16.0),
+          AllExpensesItems(isMobile: isMobile),
+          const SizedBox(height: 8.0),
         ],
       ),
     );

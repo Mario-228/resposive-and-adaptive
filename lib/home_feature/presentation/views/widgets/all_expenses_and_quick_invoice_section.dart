@@ -5,20 +5,23 @@ import 'package:responsive_and_adaptive_basics/home_feature/presentation/views/w
 class AllExpensesAndQuickInvoiceSection extends StatelessWidget {
   const AllExpensesAndQuickInvoiceSection({
     super.key,
+    this.padding =
+        const EdgeInsets.only(left: 32.0, bottom: 32.0, right: 12.0, top: 10.0),
+    this.isMobile = false,
   });
-
+  final bool isMobile;
+  final EdgeInsets padding;
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
+    return SingleChildScrollView(
       padding: EdgeInsets.zero,
       child: Padding(
-        padding:
-            EdgeInsets.only(left: 32.0, bottom: 32.0, right: 24.0, top: 10.0),
+        padding: padding,
         child: Column(
           children: [
-            AllExpenses(),
-            SizedBox(height: 24.0),
-            QuickInvoice(),
+            AllExpenses(isMobile: isMobile),
+            const SizedBox(height: 24.0),
+            const QuickInvoice(),
           ],
         ),
       ),
