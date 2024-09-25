@@ -10,7 +10,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //500 ,
-    // print(MediaQuery.sizeOf(context).width.toInt());
+    print(MediaQuery.sizeOf(context).width.toInt());
     return Scaffold(
       backgroundColor: const Color(0xFFF7F9FA),
       body: AdaptiveLayout(

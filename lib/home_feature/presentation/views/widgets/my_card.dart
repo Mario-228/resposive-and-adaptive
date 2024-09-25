@@ -12,7 +12,7 @@ class MyCard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text("My Card", style: Styles.textStyleSemiBold20),
+        Text("My Card", style: Styles.textStyleSemiBold20(context)),
         const SizedBox(height: 20.0),
         AspectRatio(
           aspectRatio: 420 / 215,

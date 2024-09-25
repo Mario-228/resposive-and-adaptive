@@ -17,11 +17,11 @@ class CustomPeriodOptions extends StatelessWidget {
           side: const BorderSide(color: Color(0xffF1F1F1), width: 1.0),
         ),
       ),
-      child: const Row(
+      child: Row(
         children: [
-          Text("Monthly", style: Styles.textStyleMedium16),
-          SizedBox(width: 18.0),
-          Icon(
+          Text("Monthly", style: Styles.textStyleMedium16(context)),
+          const SizedBox(width: 18.0),
+          const Icon(
             Icons.keyboard_arrow_down,
             color: Color(0xff064061),
           ),

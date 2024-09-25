@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_and_adaptive_basics/core/functions/get_responsive_font_size.dart';
 import 'package:responsive_and_adaptive_basics/core/utils/styles.dart';
 
 class ChartItemInfo extends StatelessWidget {
@@ -16,7 +15,7 @@ class ChartItemInfo extends StatelessWidget {
     return ListTile(
       contentPadding: EdgeInsets.zero,
       minVerticalPadding: 0.0,
-      horizontalTitleGap: 0.0,
+      horizontalTitleGap: 5.0,
       minTileHeight: 70.0,
       leading: CircleAvatar(
         radius: 6.0,
@@ -24,16 +23,12 @@ class ChartItemInfo extends StatelessWidget {
       ),
       title: Text(
         title,
-        style: Styles.textStyleRegular16.copyWith(
-            fontSize: GetResponsiveFontSize.getResponsiveTextSize(
-                context: context, fontSize: 14.0)),
+        style: Styles.textStyleRegular16(context),
       ),
       trailing: Text(
         "$percentage%",
-        style: Styles.textStyleMedium16.copyWith(
+        style: Styles.textStyleMedium16(context).copyWith(
           color: const Color(0xff208CC8),
-          fontSize: GetResponsiveFontSize.getResponsiveTextSize(
-              context: context, fontSize: 14.0),
         ),
       ),
     );
@@ -53,7 +48,7 @@ soln 2
 Row(
       children: [
         CircleAvatar(
-          radius: 12.0,
+          radius: 6.0,
           backgroundColor: Color(color),
         ),
         const SizedBox(width: 12.0),

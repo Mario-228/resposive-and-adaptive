@@ -20,7 +20,9 @@ class CustomDrawerItem extends StatelessWidget {
         alignment: Alignment.centerLeft,
         child: Text(
           item.title,
-          style: isClicked ? Styles.textStyleBold16 : Styles.textStyleRegular16,
+          style: isClicked
+              ? Styles.textStyleBold16(context)
+              : Styles.textStyleRegular16(context),
         ),
       ),
       trailing: isClicked

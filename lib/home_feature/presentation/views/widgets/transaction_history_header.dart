@@ -10,11 +10,11 @@ class TransactionHistoryHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Text("Transaction History", style: Styles.textStyleSemiBold20),
+        Text("Transaction History", style: Styles.textStyleSemiBold20(context)),
         const Spacer(),
         Text(
           "See all",
-          style: Styles.textStyleMedium16.copyWith(
+          style: Styles.textStyleMedium16(context).copyWith(
             color: const Color(0xff4EB7F2),
           ),
         ),

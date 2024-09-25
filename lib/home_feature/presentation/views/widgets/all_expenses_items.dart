@@ -38,59 +38,47 @@ class AllExpensesItems extends StatefulWidget {
 class _AllExpensesItemsState extends State<AllExpensesItems> {
   @override
   Widget build(BuildContext context) {
-    return widget.isMobile
-        ? SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: AllExpensesItems.items.asMap().entries.map((e) {
-                return SizedBox(
-                  width: 180.0,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: (e.key == 1) ? 12.0 : 0.0),
-                    child: GestureDetector(
-                      onTap: () {
-                        if (e.key != AllExpensesItems.selectedIndex) {
-                          setState(() {
-                            AllExpensesItems.selectedIndex = e.key;
-                          });
-                        }
-                      },
-                      child: AllExpensesItem(
-                        isSelected: e.key == AllExpensesItems.selectedIndex,
-                        item: e.value,
-                      ),
-                    ),
-                  ),
-                );
-              }).toList(),
+    return Row(
+      children: [
+        Expanded(
+          child: GestureDetector(
+            onTap: () => selectedItemIndexExpenses(0),
+            child: AllExpensesItem(
+              isSelected: 0 == AllExpensesItems.selectedIndex,
+              item: AllExpensesItems.items[0],
             ),
-          )
-        : Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: AllExpensesItems.items.asMap().entries.map((e) {
-              return Expanded(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: (e.key == 1) ? 12.0 : 0.0),
-                  child: GestureDetector(
-                    onTap: () {
-                      if (e.key != AllExpensesItems.selectedIndex) {
-                        setState(() {
-                          AllExpensesItems.selectedIndex = e.key;
-                        });
-                      }
-                    },
-                    child: AllExpensesItem(
-                      isSelected: e.key == AllExpensesItems.selectedIndex,
-                      item: e.value,
-                    ),
-                  ),
-                ),
-              );
-            }).toList());
+          ),
+        ),
+        const SizedBox(width: 10.0),
+        Expanded(
+          child: GestureDetector(
+            onTap: () => selectedItemIndexExpenses(1),
+            child: AllExpensesItem(
+              isSelected: 1 == AllExpensesItems.selectedIndex,
+              item: AllExpensesItems.items[1],
+            ),
+          ),
+        ),
+        const SizedBox(width: 10.0),
+        Expanded(
+          child: GestureDetector(
+            onTap: () => selectedItemIndexExpenses(2),
+            child: AllExpensesItem(
+              isSelected: 2 == AllExpensesItems.selectedIndex,
+              item: AllExpensesItems.items[2],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  void selectedItemIndexExpenses(int index) {
+    if (index != AllExpensesItems.selectedIndex) {
+      setState(() {
+        AllExpensesItems.selectedIndex = index;
+      });
+    }
   }
 }
 

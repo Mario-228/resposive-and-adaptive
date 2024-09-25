@@ -26,8 +26,8 @@ class CustomMaterialButton extends StatelessWidget {
           onPressed: () {},
           color: Color(buttonColor),
           child: Text(title,
-              style:
-                  Styles.textStyleSemiBold16.copyWith(color: Color(textColor))),
+              style: Styles.textStyleSemiBold16(context)
+                  .copyWith(color: Color(textColor))),
         ),
       ),
     );

@@ -9,11 +9,11 @@ class HeaderIncome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       children: [
-        Text("Income", style: Styles.textStyleSemiBold20),
-        Spacer(),
-        CustomPeriodOptions()
+        Text("Income", style: Styles.textStyleSemiBold20(context)),
+        const Spacer(),
+        const CustomPeriodOptions()
       ],
     );
   }

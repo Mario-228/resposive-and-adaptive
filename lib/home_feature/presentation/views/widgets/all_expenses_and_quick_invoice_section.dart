@@ -14,6 +14,7 @@ class AllExpensesAndQuickInvoiceSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      physics: const BouncingScrollPhysics(),
       padding: EdgeInsets.zero,
       child: Padding(
         padding: padding,

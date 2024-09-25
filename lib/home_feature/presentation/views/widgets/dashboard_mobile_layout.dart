@@ -10,7 +10,8 @@ class DashboardMobileLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      drawer: const Drawer(child: CustomDrawer()),
+      drawer:
+          const SafeArea(bottom: false, child: Drawer(child: CustomDrawer())),
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {

@@ -15,8 +15,8 @@ class CustomTextFormField extends StatelessWidget {
             const EdgeInsets.only(left: 20.0, top: 20.0, bottom: 20.0),
         fillColor: const Color(0xffFAFAFA),
         hintText: hintText,
-        hintStyle:
-            Styles.textStyleRegular16.copyWith(color: const Color(0xffAAAAAA)),
+        hintStyle: Styles.textStyleRegular16(context)
+            .copyWith(color: const Color(0xffAAAAAA)),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12.0),
           borderSide: BorderSide.none,

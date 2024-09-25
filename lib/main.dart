@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_and_adaptive_basics/home_feature/presentation/views/home_view.dart';
 // import 'package:responsive_and_adaptive_basics/views/main_view/adaptive_example.dart';
@@ -9,13 +10,14 @@ import 'package:responsive_and_adaptive_basics/home_feature/presentation/views/h
 // import 'package:responsive_and_adaptive_basics/views/widgets/flexible_widget_example/flexible_widget_example.dart';
 // import 'package:responsive_and_adaptive_basics/views/widgets/layout_builder_example/layout_builder_home_layout.dart';
 
-void main() => runApp(const MyApp()
-    // DevicePreview(
-    //   enabled: true,
-    //   builder: (context) {
-    //     return const MyApp();
-    //   },
-    // ),
+void main() => runApp(
+      // const MyApp()
+      DevicePreview(
+        enabled: true,
+        builder: (context) {
+          return const MyApp();
+        },
+      ),
     );
 
 class MyApp extends StatelessWidget {
@@ -24,8 +26,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       //this for DevicePreview
-      // locale: DevicePreview.locale(context),
-      // builder: DevicePreview.appBuilder,
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light(
         useMaterial3: true,

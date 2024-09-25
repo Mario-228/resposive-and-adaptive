@@ -30,25 +30,36 @@ class AllExpensesItem extends StatelessWidget {
             image: item.image,
           ),
           const SizedBox(height: 34.0),
-          Text(
-            item.title,
-            style: isSelected
-                ? Styles.textStyleSemiBold16.copyWith(color: Colors.white)
-                : Styles.textStyleSemiBold16,
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              item.title,
+              style: isSelected
+                  ? Styles.textStyleSemiBold16(context)
+                      .copyWith(color: Colors.white)
+                  : Styles.textStyleSemiBold16(context),
+            ),
           ),
           const SizedBox(height: 8.0),
-          Text(
-            item.date,
-            style: isSelected
-                ? Styles.textStyleRegular14.copyWith(color: Colors.white)
-                : Styles.textStyleRegular14,
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              item.date,
+              style: isSelected
+                  ? Styles.textStyleRegular14(context)
+                      .copyWith(color: Colors.white)
+                  : Styles.textStyleRegular14(context),
+            ),
           ),
           const SizedBox(height: 16.0),
-          Text(
-            item.amount,
-            style: isSelected
-                ? Styles.textStyle24.copyWith(color: Colors.white)
-                : Styles.textStyle24,
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              item.amount,
+              style: isSelected
+                  ? Styles.textStyle24(context).copyWith(color: Colors.white)
+                  : Styles.textStyle24(context),
+            ),
           ),
         ],
       ),

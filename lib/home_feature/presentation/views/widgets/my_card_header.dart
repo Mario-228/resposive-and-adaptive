@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_and_adaptive_basics/core/functions/get_responsive_font_size.dart';
 import 'package:responsive_and_adaptive_basics/core/utils/styles.dart';
 
 class MyCardHeader extends StatelessWidget {
@@ -17,20 +16,17 @@ class MyCardHeader extends StatelessWidget {
           children: [
             Text(
               "Name card",
-              style: Styles.textStyleRegular16.copyWith(
-                fontSize: GetResponsiveFontSize.getResponsiveTextSize(
-                    context: context, fontSize: 16.0),
+              style: Styles.textStyleRegular16(context).copyWith(
                 color: Colors.white,
               ),
             ),
             const SizedBox(height: 8.0),
             Text(
               "Syah Bandi",
-              style: Styles.textStyleSemiBold20.copyWith(
-                  fontWeight: FontWeight.w500,
-                  color: Colors.white,
-                  fontSize: GetResponsiveFontSize.getResponsiveTextSize(
-                      context: context, fontSize: 20.0)),
+              style: Styles.textStyleSemiBold20(context).copyWith(
+                fontWeight: FontWeight.w500,
+                color: Colors.white,
+              ),
             ),
           ],
         ),

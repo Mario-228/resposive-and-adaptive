@@ -20,16 +20,16 @@ class CustomTransactionCardItem extends StatelessWidget {
         contentPadding: const EdgeInsets.all(10.0),
         title: Text(
           title,
-          style: Styles.textStyleSemiBold16,
+          style: Styles.textStyleSemiBold16(context),
         ),
         subtitle: Text(
           subtitle,
-          style: Styles.textStyleRegular16
+          style: Styles.textStyleRegular16(context)
               .copyWith(color: const Color(0xffAAAAAA)),
         ),
         trailing: Text(
           "\$20,129",
-          style: Styles.textStyleSemiBold20.copyWith(
+          style: Styles.textStyleSemiBold20(context).copyWith(
             color: Color(balanceColor),
           ),
         ),
